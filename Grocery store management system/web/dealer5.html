@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>billing module</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body style="background-color:#A4F4AA;">
+
+
+<nav class="navbar navbar-inverse">
+  <div class="container">
+    <ul class="nav navbar-nav">
+	  <li><a href="index.jsp">Home </a></li>
+      <li ><a href="billingmodule.jsp">Billing Module</a></li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Customer Account <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="customeracccreate.jsp">Create C.Account</a></li>
+          <li><a href="#">Access C.Account</a></li>
+          <li><a href="viewallcustomeracc.jsp">View all C.Accountss</a></li>
+        </ul>
+      </li>
+      <li class="dropdown active"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Dealer Account <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="dealeracccreate.jsp">Create D.Account</a></li>
+          <li><a href="#">Access D.Account</a></li>
+          <li><a href="#">View all D.Accounts</a></li>
+        </ul>
+      </li>
+	  <li><a href="#">Stocks</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Login</a></li>
+    </ul>
+  </div>
+</nav>
+
+  
+<div class="container">
+<div class="row">
+      <div class="col-sm-6">  
+ <br><h1>Store Products Entry Module</h1><br> </div>
+ <div class="col-sm-2"> </div>
+ <div class="col-sm-4">
+
+       <h3 S>
+<div id="clockbox"></div>
+
+<script type="text/javascript">
+
+var tday=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+var tmonth=["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+function GetClock(){
+var d=new Date();
+var nday=d.getDay(),nmonth=d.getMonth(),ndate=d.getDate(),nyear=d.getFullYear();
+var nhour=d.getHours(),nmin=d.getMinutes(),nsec=d.getSeconds(),ap;
+
+if(nhour==0){ap=" AM";nhour=12;}
+else if(nhour<12){ap=" AM";}
+else if(nhour==12){ap=" PM";}
+else if(nhour>12){ap=" PM";nhour-=12;}
+
+if(nmin<=9) nmin="0"+nmin;
+if(nsec<=9) nsec="0"+nsec;
+
+var clocktext=""+tday[nday]+", "+tmonth[nmonth]+" "+ndate+", "+nyear+" "+nhour+":"+nmin+":"+nsec+ap+"";
+document.getElementById('clockbox').innerHTML=clocktext;
+}
+
+GetClock();
+setInterval(GetClock,1000);
+</script>
+
+
+	  </h3>
+
+
+
+
+ </div>
+ 
+ 
+ </div> 
+ <div class="container" style="background-color:#F4A460;">
+  <br> 
+  <h4>Enter the Product Details:</h4>
+ 
+ <form method="post" action="\Grocery_Store\dealeracc2dbservlet">
+  <div class="row">
+      <div class="col-sm-3">  
+	  <div class="form-group">
+	  <label for="ex1">Product Name</label>
+        <input class="form-control" id="ex1" type="text" name="productname">
+      </div>
+	  </div> 
+	  <div class="col-sm-2">
+          <div class="form-group">
+      <label for="sel1">Product Code</label>
+	   <input class="form-control" id="ex1" type="number" name="productcode"></div></div>
+	  <div class="col-sm-2">
+	  <div class="form-group">
+      <label for="sel1">Unit</label>
+      <select class="form-control" id="sel1" name="unit">
+        <option value="gram(g)">gram(g)</option>
+        <option value="kilogram(kl)">Kilogram(g)</option>
+        <option value="milliliter(ml)">milliliter(ml)</option>
+        <option value="liter(l)">liter(l)</option>
+      </select>
+    </div>
+	  
+	  </div>
+	  
+</div> <br>
+  <div class="row">
+      <div class="col-sm-3"> 
+	   <div class="form-group">
+	  <label for="ex1">Volume</label>
+          <input class="form-control" id="ex1" type="number" name="volume">
+      </div>
+      </div>	
+	  <div class="col-sm-2">
+	  <div class="form-group">
+	  <label for="ex1">Quantity</label>
+          <input class="form-control" id="ex1" type="number" name="quantity">
+      </div>
+	  </div>
+	  <div class="col-sm-2">
+	  <div class="form-group">
+	  <label for="ex1">Price for one Quantity</label>
+          <input class="form-control" id="ex1" type="number" name="price">
+      </div>
+	  </div>  
+ </div><br>
+	  <div class="row">
+	    <div class="col-sm-1"></div>
+		<div class="col-sm-1">
+		<button type="submit" class="btn btn-success btn-lg"><span class="glyphicon glyphicon-plus"></span> Add to Store</button>
+	       </div>
+	     </div></form><br>
+		 <br>
+		 </div>
+	  </div>
+</body>
+</html>
