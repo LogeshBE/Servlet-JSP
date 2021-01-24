@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hand-Cricket(logesh)</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    .jumbotron {
+    background-color: #000000;
+    color: #fff;
+    padding: 90px 50px;
+    font-family:  sans-serif;
+  }
+  </style>
+</head>
+<body>
+ 
+    <div class="jumbotron text-center">
+ <div class="container-fluid bg-primary"> <h1>Corona Hand-Cricket</h1> 
+  <p>Stay home , Stay Safe !</p>  </div>
+</div>
+   <div class="container bg-primary"> <div class="container-fluid bg-success">
+   <div class="row">
+	       <div class="col-sm-3" ></div>
+		   <div class="col-sm-3">
+   <font color="black">
+			<script type="text/javascript">
+			var toss,t1,t2,cts=0,pts=0,t3,start,temp1=0,temp2,chace,coronachoice,end;
+			alert("Welcome to Corona Hand Cricket");
+			alert("It's just like our normal childhood handcricket game. But this time you should play against the CORANA ,---- Let's start the fun");			
+			var player ;
+			while(1){
+			player=prompt("Enter your name:");
+			if(player==null ||player=="") 
+			  {alert("Please, Enter your name , don't leave it as blank ");
+			  }
+			   else break;
+			
+			}
+			
+			alert("Game Tips -> This game is played by two players .Hear ,the player 1 is "+player+" and player 2 is CORANA");
+			alert("Game Tips -> The game will start after the toss has complete, so you need to choose either head or tail (for a toss) to start the game. There is a random possiblilities to win or lose the toss");
+			alert("Game Tips -> If you won the toss then you should decide ,either you bat first or bowl first . If you choose bat then CORONA is a bowler , else you choose bowl then CORONA is a batsman.");
+            alert("Game Tips -> Let us assume you won the toss and choose to bat first , then you should select any one of the value from 1 to 6 randamly ,at the same time the CORONO also throws any one of value from 1 to 6 randamly . If your's value and CORONO's value is equal then you decide to 'OUT' else your value is added to your total score . This process is carried continuesly ,until both the values are equal( your's value and CORONA's value) .");  			
+			alert("Game Tips -> Once you 'OUT' ,then your totalscore is given as a target to CORONA after that CORONA has bats against you and you should bowl against CORONA .The bowling and batting process is same as you can seen before . If you 'OUT' the CORONA before the CORONA reaches your's totalscore. Then you declared as a winner .Otherwise the CORONA is reach(equal to yours totalscore) or cross your totalscore then CORONA is declared as a winner.");
+			alert("Game Tips -> Let us assume CORANA is won the toss , then all the process is as like's yours process when you seen befeor , but the only thing now CORONA can decide to whether, bat first or bowl first. That's all about the game playing procedure to play this game ...--------- Let's Start ..");
+			while(1)
+			{
+			     toss=prompt("Enter your choice 'head ' or 'tail' for a toss to start the game.");
+				 if("head"==toss ||  toss=="HEAD"  || toss=="Head" || toss=="Tail" || toss=="TAIL" ||"tail"==toss)
+				 { t1=0;
+				 break; }
+				 else 
+				 alert("Oops ! .. "+player+" you must only enter 'head' or 'tail' for a toss");
+			}
+			  t2=Math.floor(Math.random() * 2);
+			  <!--alert(t2 +" " +t1); -->
+			  if(t1==t2) 
+              {     
+			    while(1){
+				  t3=prompt("Great "+player+"!...You Won the toss....Enter the choice of yours either 'bat' or 'bowl'.");
+				 if(t3=="bat" || t3=="BAT" ||t3=="Bat" || t3=="batting")
+				 { start=1;
+				   break;
+				 }
+				 else if( t3=="BOWL" || t3=="bowl" ||t3=="Bowl" ||t3=="bowling")
+				 {
+				    start=2;
+					break;
+				 }
+				 else alert("Oops !.. "+player+" you must only enter 'bat' or 'bowl' to start the game.");
+				 }
+				 while(start==1)
+				 {
+				    temp1=parseInt(prompt("Enter any one of the value from 1 to 6 ________________"+player+" : Your TotalScore is '"+pts+"'."));
+					if(temp1>=1 && temp1 <=6)
+					{  temp2=Math.floor(Math.random() * 7);
+					   if(temp2==0) temp2=temp2+6;
+					   if(temp1==temp2) 
+					   { alert(player+" you are 'OUT'...Yours TotalScore is '"+pts+"'.");
+					     alert("Now , You are a bowler and CORONA is batsman . Try to get the wicket of CORONA .");
+						 chace=2;
+					     break;
+					   }
+					   else
+					   {  
+					      pts=pts+temp1; 
+					   }
+					}
+					else alert("Oops !.. "+player+" : you must enter  any one of the values from 1 to 6 only .");
+				 }
+				 while(start==2)
+				 {  
+				      temp1=parseInt(prompt("Enter any one of the value from 1 to 6 ----------------- CORONA's TotalScore is '"+cts+"'."));
+				      if(temp1>=1 && temp1 <=6)
+					{  temp2=Math.floor(Math.random() * 7);
+					   if(temp2==0) temp2=temp2 + 6;
+					   if(temp1==temp2) 
+					   { alert(player+" you got the wicket of CORONA...Your Target Score is '"+(cts+1)+"'.");
+					     alert("Now , You are a batsman and CORONA is bowler . Try to get the Target Score to defect the CORONA .");
+						 chace=1;
+					     break;
+					   }
+					   else
+					   {  
+					      cts=cts+temp2; 
+					   }
+					}
+					else alert("Oops !.. "+player+" : you must enter  any one of the values from 1 to 6 only .");
+					  
+				 }
+				 while(chace==1)
+				 {  
+				    temp1=parseInt(prompt("Enter any one of the value from 1 to 6 ________________"+player+" : Your TotalScore is '"+pts+"' and the Target Score is '"+(cts+1)+"'"));
+					if(temp1>=1 && temp1 <=6)
+					{  temp2=Math.floor(Math.random() * 7);
+					   if(temp2==0) temp2=temp2+6;
+					   if(temp1==temp2) 
+					   { alert(player+" you are 'OUT'...Yours TotalScore is '"+pts+"'.");
+					    <!-- alert("Now , You are a looser ,CORONA is a Winner."); -->
+						document.writeln( "<h3>  CORANO is a Winner , Don't worry Try Again :)   </h3>  ");
+					     break;
+					   }
+					   else
+					   {  
+					      pts=pts+temp1;
+                          if(pts>=cts+1) 
+                            {  <!--alert(player+" your a winner")	;	-->
+							   document.writeln( " <h3> Great ! , "+player+" is a Winner  :)   </h3>  ");
+                               break;
+                             }							   
+					   }
+					}
+					else alert("Oops !.. "+player+" : you must enter  any one of the values from 1 to 6 only .");
+				 
+				 }
+				 while(chace==2)
+				 {
+		              temp1=parseInt(prompt("Enter any one of the value from 1 to 6 ________________CORONA's TotalScore is '"+cts+"'..The Target Score is '"+pts+"'"));
+				      if(temp1>=1 && temp1 <=6)
+					{  temp2=Math.floor(Math.random() * 7);
+					   if(temp2==0) temp2=temp2 + 6;
+					   if(temp1==temp2) 
+					   { 
+					     <!--alert("Now , You are a winner and CORONA is a looser ."); -->
+						 document.writeln( " <h3> Great ! , "+player+" is a Winner  :)   </h3>  ");
+						 chace=1;
+					     break;
+					   }
+					   else
+					   {  
+					      cts=cts+temp2; 
+						  if(cts>=pts)
+						    {  <!--alert("CORONO is a Winner");-->
+							  document.writeln( " <h3> CORANO is a Winner , Don't worry Try Again :)    </h3> ");
+							 break;
+							 }
+					   }
+					}
+					else alert("Oops !.. "+player+" : you must enter  any one of the values from 1 to 6 only .");
+				 }
+			  }	
+              else
+              {  
+			    coronachoice=  Math.floor(Math.random() * 2);
+				if(coronachoice==0) 
+				{ alert("Oops..! CORONA won the toss and decide to bat first");
+				  end=1;
+				}
+				else
+                { alert("Oops..! CORONA won the toss and decide to bowl first");
+               		end=2;
+				}
+				 while(end==1)
+				 {  
+				      temp1=parseInt(prompt("Enter any one of the value from 1 to 6 ________________CORONA's TotalScore is '"+cts+"'."));
+				      if(temp1>=1 && temp1 <=6)
+					{  temp2=Math.floor(Math.random() * 7);
+					   if(temp2==0) temp2=temp2 + 6;
+					   if(temp1==temp2) 
+					   { alert(player+" you got the wicket of CORONA...Your Target Score is '"+(cts+1)+"'.");
+					     alert("Now , You are a batsman and CORONA is bowler . Try to get the Target Score to defect the CORONA .");
+						 chace=1;
+					     break;
+					   }
+					   else
+					   {  
+					      cts=cts+temp2; 
+					   }
+					}
+					else alert("Oops !.. "+player+" : you must enter  any one of the values from 1 to 6 only .");
+					  
+				 }
+				 while(end==2)
+				 {
+				    temp1=parseInt(prompt("Enter any one of the value from 1 to 6 ________________"+player+" : Your TotalScore is '"+pts+"'."));
+					if(temp1>=1 && temp1 <=6)
+					{  temp2=Math.floor(Math.random() * 7);
+					   if(temp2==0) temp2=temp2+6;
+					   if(temp1==temp2) 
+					   { alert(player+" you are 'OUT'...Yours TotalScore is '"+pts+"'.");
+					     alert("Now , You are a bowler and CORONA is batsman . Try to get the wicket of CORONA .");
+						 chace=2;
+					     break;
+					   }
+					   else
+					   {  
+					      pts=pts+temp1; 
+					   }
+					}
+					else alert("Oops !.. "+player+" : you must enter  any one of the values from 1 to 6 only .");
+				 }
+				 while(chace==1)
+				 {  
+				    temp1=parseInt(prompt("Enter any one of the value from 1 to 6 ________________"+player+" : Your TotalScore is '"+pts+"' and the Target Score is '"+(cts+1)+"'"));
+					if(temp1>=1 && temp1 <=6)
+					{  temp2=Math.floor(Math.random() * 7);
+					   if(temp2==0) temp2=temp2+6;
+					   if(temp1==temp2) 
+					   { alert(player+" you are 'OUT'...Yours TotalScore is '"+pts+"'.");
+					     <!--alert("Now , You are a looser ,CORONA is a Winner."); -->
+						 document.writeln( "<h3>  CORANO is a Winner , Don't worry Try Again :)   </h3>  ");
+					     break;
+					   }
+					   else
+					   {  
+					      pts=pts+temp1;
+                          if(pts>=cts+1) 
+                            {  <!--alert(player+" your a winner")	; -->
+                               document.writeln( " <h3> Great ! , "+player+" is a Winner  :)   </h3>  ");							
+                               break;
+                             }							   
+					   }
+					}
+					else alert("Oops !.. "+player+" : you must enter  any one of the values from 1 to 6 only .");
+				 
+				 }
+				 while(chace==2)
+				 {
+		              temp1=parseInt(prompt("Enter any one of the value from 1 to 6 ________________CORONA's TotalScore is '"+cts+"'..The Target Score is '"+pts+"'"));
+				      if(temp1>=1 && temp1 <=6)
+					{  temp2=Math.floor(Math.random() * 7);
+					   if(temp2==0) temp2=temp2 + 6;
+					   if(temp1==temp2) 
+					   { alert(player+" you got the wicket of CORONA..");
+					    <!-- alert("Now , You are a winner and CORONA is a looser ."); -->
+						 document.writeln( " <h3> Great ! , "+player+" is a Winner  :)   </h3>  ");
+					     break;
+					   }
+					   else
+					   {  
+					      cts=cts+temp2; 
+						  if(cts>=pts)
+						    {   <!--alert("CORONO is a Winner"); -->
+							   document.writeln( "<h3>  CORANO is a Winner , Don't worry Try Again :)   </h3>  ");
+							 break;
+							 }
+					   }
+					}
+					else alert("Oops !.. "+player+" : you must enter  any one of the values from 1 to 6 only .");
+				 }
+				
+				
+			  }			  
+			
+			</script>
+			
+            
+    </div>
+</div> <br><br><br><br><br><br><br>
+<div class="row">  <div class="col-sm-4 "></div>
+<div class="col-sm-3"><p>~Designed by Mr.S.Logesh</p></div></div>
+
+</div>
+</font>
+<br>
+<br>
+<br>
+</div>
+
+</body>
+</html>
