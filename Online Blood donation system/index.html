@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Online Blood donation System</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+</head>
+<body>
+<div class="container bg-primary">
+<div class="jumbotron text-center ">
+ <div class="container-fluid bg-primary"> <h1>Online Blood Donation System</h1> 
+  <p>The Place of Pleasant!</p>  </div>
+</div>
+<div class="row">
+    <div class="col-sm-5">
+	<h3> Please choose the below list, for which blood group person details you want.</h3>
+	<div class="jumbotron text-center ">
+<form action="viewdetails.jsp">
+  <input type="radio" name="BG" value="A Positive">
+  <label><font color='black'>A +ve</font></label><br>
+  <input type="radio" name="BG" value="A Negative">
+  <label><font color='black'>A -ve</font></label><br>
+  <input type="radio" name="BG" value="B Positive">
+  <label><font color='black'>B +ve</font></label><br>
+  <input type="radio" name="BG" value="B Negative">
+  <label><font color='black'>B -ve</font></label><br>
+  <input type="radio" name="BG" value="O Positive">
+  <label><font color='black'>O +ve</font></label><br>
+  <input type="radio" name="BG" value="O Negative">
+  <label><font color='black'>O -ve</font></label><br>
+   <font color='black'><input type="submit" value="Submit"></font>
+</form> 
+   </div>
+    </div>
+    <div class="col-sm-7">
+    <h3> If you willing to donate your blood, please provide your details in the below form</h3>
+	<div class="jumbotron text-center ">
+	<form action="\Blood_donation\addperson.jsp">
+	<font color="black">
+	<table>
+	<tr>
+	<td>
+   <label for="fname">First name </label> </td>
+  <td><input type="text" name="fname" required> </td>
+  </tr>
+  <tr><td>
+  <label for="lname">Last name </label> </td>
+  <td><input type="text" name="lname" required></td>
+  </tr>
+  <tr><td>
+  <label for="BG">Blood Group </label> </td>
+  <td>
+  <select name="BG">
+    <option value="A Positive">A - Positive</option>
+    <option value="A Negative">A - Negative</option>
+    <option value="B Positive">B - Positive</option>
+    <option value="B Negative">B - Negative</option>
+	<option value="O Positive">O - Positive</option>
+	<option value="O Negative">O - Negative</option>
+  </select></td>
+  </tr>
+  <tr>
+  <td>
+	<label for="contactnumber">Contact number</label> </td>
+  <td><input type="text" name="contactnumber" required></td>	
+  </tr>
+  <tr><td>
+  <label for="Address">Address   </label></td>
+  <td><textarea name="Address" rows="4	" cols="23" required></textarea></td>
+  </tr>
+  <tr><td></td>
+  <td><input type="submit" value="Submit"></td>
+  </tr>
+		</font>
+		</table>
+	</form>
+	</div>
+	</div>
+  </div>
+</div>
+</body>
+</html>
