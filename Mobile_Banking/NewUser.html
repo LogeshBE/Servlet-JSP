@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>AppNewUser</title>
+	<style>
+		body
+		{
+			background-color:silver;
+		}
+		</style>
+</head>
+<body>
+    <form method="post" action="\BankAccount\NewUserServlet">
+	<center><p><b><center>New User</center></b></p>
+            User_Name : <input type="text" name="Username" placeholder="Enter the username" required><br><br>
+             Phone Number : <input type="number" name="MobileNum" placeholder="Enter Mobile Number" required><br><br>
+		Pin Number :  <input type="password" name="Password" placeholder="Enter your pin" required><br><br>
+	   Retype-Pin Number :  <input type="password" name="R-Password" placeholder="Retype your pin" required><br><br>
+		Bank Account Number :  <input type="number" name="Bank Acc" placeholder="Enter your Account Number" required><br><br>
+		Bank Name : <input type="text" name="Bank Name" placeholder="Enter the bank name" required><br><br>
+                Account_Balance : <input type="number" name="Acc_Balance" placeholder="Enter account balance" required><br><br>
+		<input type="submit" value="Create Account">
+	   </center>
+    </form>
+</body>
+</html>
